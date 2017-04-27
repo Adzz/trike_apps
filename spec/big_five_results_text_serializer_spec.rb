@@ -189,4 +189,23 @@ RSpec.describe BigFiveResultsTextSerializer do
       end
     end
   end
+
+  context 'Adding facets' do
+    let(:more_text) do
+      "\n"\
+      "TEST FACET\n"\
+      "Overall Fake Score.....100\n"\
+      "this is also totes fake....500\n"\
+      "this one is real............7000\n"\
+      "this one is real fake............22\n"\
+    end
+
+    it 'will handle any number of facets' do
+      text << more_text
+      expect(subject.serialize['TEST FACET']["Overall Score"]).to be 100
+      expect(subject.serialize['TEST FACET']["Facets"]["this is also totes fake"]).to be 500
+      expect(subject.serialize['TEST FACET']["Facets"]["this one is real"]).to be 7000
+      expect(subject.serialize['TEST FACET']["Facets"]["this one is real fake"]).to be 22
+    end
+  end
 end
