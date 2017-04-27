@@ -7,7 +7,7 @@ Friendliness.............82
 Gregariousness...........80
 Assertiveness............44
 Activity Level...........88
-Excitement-Seeking.......46
+Excitement Seeking.......46
 Cheerfulness.............27
 
 AGREEABLENESS
@@ -21,11 +21,11 @@ Sympathy.................52
 
 CONSCIENTIOUSNESS
 Overall score............24
-Self-Efficacy............24
+Self Efficacy............24
 Orderliness..............25
 Dutifulness..............8
-Achievement-Striving.....56
-Self-Discipline..........36
+Achievement Striving.....56
+Self Discipline..........36
 Cautiousness.............38
 
 NEUROTICISM
@@ -33,7 +33,7 @@ Overall score............50
 Anxiety..................64
 Anger....................60
 Depression...............46
-Self-Consciousness.......15
+Self Consciousness.......15
 Immoderation.............38
 Vulnerability............77
 

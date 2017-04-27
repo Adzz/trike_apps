@@ -7,9 +7,13 @@ class BigFiveResultsTextSerializer
 
   def serialize
     {
-      NAME: name,
-      EMAIL: email,
-      EXTRAVERSION: rest[0]
+      "NAME" => name,
+      "EMAIL" => email,
+      "EXTRAVERSION" => rest[0],
+      "AGREEABLENESS" => rest[1],
+      "CONSCIENTIOUSNESS" => rest[2],
+      "NEUROTICISM" => rest[3],
+      "OPENNESS TO EXPERIENCE" => rest[4],
     }
   end
 
@@ -31,7 +35,7 @@ class BigFiveResultsTextSerializer
 
   def rest
     traits.map do |trait|
-      trait.split(/\n/).map.with_object({}) do |trait_string, hash|
+      trait.split(/\n/).drop(1).map.with_object({}) do |trait_string, hash|
         hash[trait_string.delete("^a-zA-Z|\s")] = trait_string.delete("^0-9").to_i
       end
     end
