@@ -12,4 +12,10 @@ gets.chomp
 puts "Posting away...!"
 
 hash = BigFiveResultsTextSerializer.new(File.read("spec/fixtures/input_text.txt")).serialize
-BigFiveResultsPoster.new(hash).post
+
+poster = BigFiveResultsPoster.new(hash)
+poster.post
+
+puts "Results posted, Hurrah!"
+puts "Your token is: #{poster.token}"
+puts "Your Response Code is: #{poster.response_code}"
