@@ -33,14 +33,14 @@
   ```
 
   - Write a BigFiveResultsPoster class that submits your Big 5 results to our Recruitbot [website](https://recruitbot.trikeapps.com/api/v1/roles/mid-senior-web-developer/big_five_profile_submissions)
-  - This class should have two methods - an initializer that takes a single resultshash argument, and a post function that posts a *JSON* representation of the result hash (as the request body).
+  - This class should have two methods - an initializer that takes a single `results_hash` argument, and a post function that posts a `JSON` representation of the result hash (as the request body).
 
 
 Keep in mind that this is a JSON endpoint so your request headers will need to specify JSON as the content type.
 
 This endpoint will either return a 201 and a receipt token in the body of the response, or a 422 with helpful error messages in the body of the response.
 
-  - The post function should return true if the post operation succeeded or false otherwise. 
+  - The post function should return true if the post operation succeeded or false otherwise.
   - Your BigFiveResultsPoster class should also have two readable attributes - responsecode and token.
 
 Using your BigFiveResultsTextSerializer and BigFiveResultsPoster classes, write a Ruby script that submits your results to [Recruitbot](https://recruitbot.trikeapps.com/api/v1/roles/mid-senior-web-developer/big_five_profile_submissions)

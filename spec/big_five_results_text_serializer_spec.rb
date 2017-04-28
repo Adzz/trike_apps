@@ -37,7 +37,7 @@ RSpec.describe BigFiveResultsTextSerializer do
       end
 
       it 'serializes Excitement-Seeking' do
-        expect(facets["Excitement Seeking"]).to eq 46
+        expect(facets["Excitement-Seeking"]).to eq 46
       end
 
       it 'serializes Cheerfulness' do
@@ -93,7 +93,7 @@ RSpec.describe BigFiveResultsTextSerializer do
       let(:facets) { subject.serialize["CONSCIENTIOUSNESS"]["Facets"] }
 
       it 'serializes Self Efficacy' do
-        expect(facets["Self Efficacy"]).to eq 24
+        expect(facets["Self-Efficacy"]).to eq 24
       end
 
       it 'serializes Orderliness' do
@@ -105,11 +105,11 @@ RSpec.describe BigFiveResultsTextSerializer do
       end
 
       it 'serializes Achievement Striving' do
-        expect(facets["Achievement Striving"]).to eq 56
+        expect(facets["Achievement-Striving"]).to eq 56
       end
 
       it 'serializes Self Discipline' do
-        expect(facets["Self Discipline"]).to eq 36
+        expect(facets["Self-Discipline"]).to eq 36
       end
 
       it 'serializes Cautiousness' do
@@ -141,7 +141,7 @@ RSpec.describe BigFiveResultsTextSerializer do
       end
 
       it 'serializes Self Consciousness' do
-        expect(facets["Self Consciousness"]).to eq 15
+        expect(facets["Self-Consciousness"]).to eq 15
       end
 
       it 'serializes Immoderation' do

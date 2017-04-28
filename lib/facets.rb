@@ -26,7 +26,7 @@ class Facets
   end
 
   def facet_name_for(string)
-    string.delete("^a-zA-Z|\s")
+    string.delete("^a-zA-Z-\s")
   end
 
   def score_for(string)
