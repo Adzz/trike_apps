@@ -3,11 +3,11 @@ RSpec.describe BigFiveResultsTextSerializer do
   subject { described_class.new(text) }
 
   it 'serializes a given name' do
-    expect(subject.serialize["NAME"]).to eq "Huge Jackman"
+    expect(subject.serialize["NAME"]).to eq "Adam Lancaster"
   end
 
   it 'serializes the email from the input text' do
-    expect(subject.serialize["EMAIL"]).to eq "lancaster28@hotmail.com"
+    expect(subject.serialize["EMAIL"]).to eq "lancaster.29.89@gmail.com"
   end
 
   context 'EXTRAVERSION' do

@@ -1,21 +1,26 @@
 require "json"
-require "net/http"
+require "net/https"
 require "uri"
 
 class BigFiveResultsPoster
-  attr_reader :token, :response_code,
+  attr_reader :token, :response_code
 
-  def intialize(results_hash)
+  def initialize(results_hash)
     @json_payload = JSON.generate(results_hash)
-    @token = "123"
-    @response_code = "200"
   end
 
   def post
     http = Net::HTTP.new(uri.host, uri.port)
     request = Net::HTTP::Post.new(uri.request_uri, json_header)
     request.body = json_payload
-    http.request(request)
+    http.use_ssl = true
+    # Little bit risky...
+    http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+    response = http.request(request)
+    @response_code = response.code
+    @token = response.body
+    return true if @response_code == "201"
+    false
   end
 
   private
@@ -28,7 +33,7 @@ class BigFiveResultsPoster
   end
 
   def json_header
-    { 'Content-Type': 'text/json' }
+    { 'Content-Type': 'application/json' }
   end
 
   attr_reader :json_payload

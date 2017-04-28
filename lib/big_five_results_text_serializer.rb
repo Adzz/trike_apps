@@ -1,3 +1,5 @@
+require_relative './Facets'
+
 class BigFiveResultsTextSerializer
   def initialize(text)
     @text = text
